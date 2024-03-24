@@ -7,6 +7,7 @@
   <title>Home</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/d8bcc82f5b.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/d8bcc82f5b.js" crossorigin="anonymous"></script>
   <style>
     .top-head {
       background-color: #02451f !important;
@@ -91,13 +92,14 @@
   </nav>
 
   <section class="section-1 mt-3">
-  <div class="container-fluid img-bg h-100 border" style="background-image: url('Ecommerce\assets\img\top.webp');">
+  <div class="container-fluid img-bg h-40 border" style="background-image: url('Ecommerce\assets\img\top.webp');">
       <h1>Welcome to our website!</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur purus id velit malesuada, nec fermentum ex ultrices. Phasellus maximus, arcu eget viverra suscipit, felis ligula suscipit ex, nec ultricies nisi turpis et lectus.</p>
   </div>
 
-  <div class="container">
-    <h4>Plants</h4>
+  <div class="container plants-captions text-success">
+    <h4><i class="fa-solid fa-seedling"></i> Plants</h4>
+    <p>Plants make for the best house companions, suitable for all your moods and every aesthetic. Ugaoo brings you the widest variety of plants to choose from so you can buy plants online from the comfort of your home!</p>
   </div>
   </section>
 

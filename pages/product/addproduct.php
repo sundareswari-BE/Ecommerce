@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                         && $imageFileType != "gif" && $imageFileType != "Webp"
                     ) {
-                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        echo "Sorry, only JPG, JPEG, PNG ,webp & GIF files are allowed.";
                         $uploadOk = 0;
                     } else {
 
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $done = mysqli_query($conn, $sql);
                                 if ($done) {
                                     $_SESSION['submitted'] = 'Submitted Successfully';
-                                    header('location:viewproduct.php');
+                                    echo '<script>window.location.href = "viewproduct.php";</script>';
                                     exit();
                                 } else {
                                 }

@@ -96,7 +96,7 @@ $addproductresult = mysqli_query($conn, $addproductquery);
                         echo "<td class='border'>" . $addproductrow['productname'] . "</td>";
                         echo "<td class='border'>" . $addproductrow['productcode'] . "</td>";
                         echo "<td class='border'>" . $addproductrow['productdescription'] . "</td>";
-                        echo "<td class='border'>$" . $addproductrow['productprice'] . "</td>";
+                        echo "<td class='border'>$"     . $addproductrow['productprice'] . "</td>";
 
                         echo "<td class='border'>";
                         if ($addproductrow['productstatus'] == 1) {
