@@ -28,13 +28,13 @@
     .dropdown:hover .dropdown-menu {
         display: block;
       }
-    /* .img-bg {
-      background-image: url(Ecommerce\assets\img\top.webp);
+    .img-bg {
+      background: url(../assets/img/bg.jpg) rgba(255, 0, 150, 0.3) no-repeat center;
+      height: 300px !important;
       background-size: cover;
-      background-position: center;
       color: #fff;
-      padding: 50px; Adjust padding as needed 
-    }*/
+      padding: 50px; 
+    }
   </style> 
 
 </head>
@@ -91,7 +91,7 @@
   </nav>
 
   <section class="section-1 mt-3">
-  <div class="container-fluid img-bg h-100 border" style="background-image: url('Ecommerce\assets\img\top.webp');">
+  <div class="container-fluid img-bg h-100 border">
       <h1>Welcome to our website!</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur purus id velit malesuada, nec fermentum ex ultrices. Phasellus maximus, arcu eget viverra suscipit, felis ligula suscipit ex, nec ultricies nisi turpis et lectus.</p>
   </div>
