@@ -12,7 +12,7 @@ $addcategoryresult = mysqli_query($conn, $addcategoryquery);
 <head>
     <style>
         .main-container {
-            background-color: #25523B;
+            background-color: #25523B !important;
         }
 
         .box-container {
