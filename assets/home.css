@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header section */
+.search-box{
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #5E9E4D;
+    padding: 0 0 0 .7rem;
+}
+.search-box input{
+    background-color: none;
+    outline: none;
+    border: none;
+    padding: 0rem  1rem !important;
+    border-radius: none
+    ;
+}
+.search-box button{
+    background-color: none;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #5E9E4D;
+    padding: 10px 20px;
+}
+.search-box button svg{
+    fill:#fff;
+    width: 16px;
+    height:16px;
+}
+.search-box input:focus{
+    outline: unset !important;
+    border: unset !important;
+}
+.search-box button:hover{
+    border-radius: unset;
+    background-color: none;
+}
+
+.navbar-top{
+    border-bottom: 1px solid #5E9E4D !important;
+}
+.navbar-top .container-fluid, .nav-sec .container-fluid{
+    padding: 0;
+}
+.navbar-top .navbar-brand img{
+    width: 150px;
+}
+.header{
+    background: rgba(248, 158, 158, 0.384) !important;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+/* banner section */
+.banner-img{
+    height: 500px;
+    background: url(../assets/home-test/banner.png) no-repeat right center/contain;
+}
+
+.shop-btn{
+    background-color: black !important;
+    color: #fff !important;
+    padding: 1rem 2rem !important;
+    border-radius: 30px !important;
+}
+.top-heading,.bottom-heading{
+    font-size: 3rem;
+}
+.green{
+    color: #3A632F;
+    font-size: 6rem;
+}
+.orange{
+    color: #A85013;
+}
+
+.section-2.products{
+    background: linear-gradient(to right, #68A757, #3A632F);
+    border-radius: 100px 0 0 100px;
+}
+.img-box{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    max-height: 400px;
+}
+.img-box .img-cont{
+    height: 200px;
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: #5E9E4D; */
+    overflow: hidden;
+}
+.img-box .img-cont img{
+    width: 200px;
+}

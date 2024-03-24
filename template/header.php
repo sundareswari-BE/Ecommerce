@@ -1,107 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/d8bcc82f5b.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="../assets/home.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <style>
-        
-       .error{
-        color:red;
-       }
-        /* .wNav {
-            background-color: #45C8DC;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container-fluid.header-wrap{
+            padding: 0;
+        }
+
+        /* header section */
+        .search-box {
+            background-color: #fff;
+            border-radius: 25px;
+            border: 1px solid #5E9E4D;
+            padding: 0 0 0 .7rem;
+        }
+
+        .search-box input {
+            background-color: none;
+            outline: none;
             border: none;
-        } */
-
-        .wBrand {
-            background-size: cover;
-            /* background-color: #3FB4C6; */
-            font-size: 28px;
-            color: #ECF0F1 !important;
-            font-family: Helvetica;
-            padding: 15px 0;
-            text-align: center;
+            padding: 0rem 1rem !important;
+            border-radius: none;
         }
 
-        .navtext {
-            font-size: 18px;
-            color: #ECF0F1;
-            padding: 15px 0;
-            text-align: center;
-            font-family: Helvetica;
-            border-right: 1px solid gainsboro;
+        .search-box button {
+            background-color: none;
+            outline: none;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: #5E9E4D;
+            padding: 10px 20px;
         }
 
-        .sidenavbar {
-            background-color: #262A33;
-            height: 445px;
-            text-align: center;
-            color: #323640;
-            padding: 10px;
-            display: block;
+        .search-box button svg {
+            fill: #fff;
+            width: 16px;
+            height: 16px;
         }
 
-        .sidenavtext {
-            display: block;
-            text-align: center;
-            color: #DDF3F7;
-            font-family: times;
-            font-size: 18px;
-            padding: 12px;
+        .search-box input:focus {
+            outline: unset !important;
+            border: unset !important;
+        }
+
+        .search-box button:hover {
+            border-radius: unset;
+            background-color: none;
+        }
+
+        .navbar-top {
+            border-bottom: 1px solid #5E9E4D !important;
+        }
+
+        .navbar-top .container-fluid,
+        .nav-sec .container-fluid {
+            padding: 0;
+        }
+
+        .navbar-top .navbar-brand img {
+            width: 150px;
+        }
+
+        .header {
+            background: #fff !important;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            box-shadow: 0.5px 0.5px 10px #000;
+        }
+
+        /* banner section */
+        .banner-img {
+            height: 500px;
+            background: url(../assets/home-test/banner.png) no-repeat right center/contain;
+        }
+
+        .shop-btn {
+            background-color: black !important;
+            color: #fff !important;
+            padding: 1rem 2rem !important;
+            border-radius: 30px !important;
+        }
+
+        .top-heading,
+        .bottom-heading {
+            font-size: 3rem;
+        }
+
+        .green {
+            color: #3A632F;
+            font-size: 6rem;
+        }
+
+        .orange {
+            color: #A85013;
+        }
+
+        .section-2.products {
+            background: linear-gradient(to right, #68A757, #3A632F);
+            border-radius: 100px 0 0 100px;
+        }
+
+        .img-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            max-height: 400px;
+        }
+
+        .img-box .img-cont {
+            height: 200px;
+            width: 100%;
+            margin: 0 auto;
+            /* background-color: #5E9E4D; */
+            overflow: hidden;
+        }
+
+        .img-box .img-cont img {
+            width: 200px;
         }
     </style>
 </head>
+
 <body>
 
+    <div class="container-fluid header-wrap">
+        <header class="header px-5">
+            <!-- Navbar -->
+
+            <nav class="navbar navbar-expand-lg navbar-light navbar-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="../assets/home-test/Logo-1.png" alt="logo image"></a>
+                    <div class="collapse navbar-collapse d-flex justify-content-end">
+                        <form class="d-flex">
+                            <div class="search-box form-group d-flex">
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
 
 
-
-
-    <nav class="navbar navbar-expand-sm p-0 navbar-light headerborder">
-        <div class="container-fluid wNav">
-            <div class="row">
-                <a class="col navbar-brand wBrand m-0" href="#">
-                    <img src="\Ecommerce\assets\img\logo.png" class="w-25" alt="webnest">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link wHeaderIcon" href="..\..\template\Home.php">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link wHeaderIcon dropdown-toggle" href="#" id="navbarDropdownCategory" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Category
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="\Ecommerce\pages\category\addcategory.php">Add Category</a>
-                            <a class="dropdown-item" href="\Ecommerce\pages\category\viewcategory.php">View Category</a>
+            <nav class="navbar navbar-expand-md nav-sec py-3">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item pe-3">
+                                <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#">Products</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#">Plant Collection</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#">About</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold" href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="logout">
+                            <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                </svg>Logout</button>
                         </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link wHeaderIcon dropdown-toggle" href="#" id="navbarDropdownProduct" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Product
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="\Ecommerce\pages\product\addproduct.php">Add Product</a>
-                            <a class="dropdown-item" href="\Ecommerce\pages\product\viewproduct.php">View Product</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link wHeaderIcon" href="\Ecommerce\post\logout.php">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                    </div>
+                </div>
+            </nav>
 
-    <hr class="m-0">
+        </header>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
