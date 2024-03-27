@@ -1,7 +1,15 @@
 <?php
 session_start();
 include("../../post/connection.php");
-include("../../template/header.php");
+
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+ 
+    header("location:..\..\index.php");
+    exit;    }
+
+include("../../template/backend-header.php");
+
 $addproductquery = "SELECT * FROM addproduct ORDER BY productid DESC";
 $addproductresult = mysqli_query($conn, $addproductquery);
 
@@ -114,3 +122,7 @@ $addproductresult = mysqli_query($conn, $addproductquery);
                 </tbody>
             </table>
         </div>
+        
+    </div>
+</div>
+<?php include("../../template/backend-footer.php");?> 

@@ -1,7 +1,15 @@
 <?php
 session_start();
+
 include("../../post/connection.php");
-include("../../template/header.php");
+
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("location:..\..\index.php");
+    exit;
+}
+
+include("../../template/backend-header.php");
 
 
 $addcategoryquery = "SELECT * FROM category ORDER BY categoryid DESC";
@@ -98,3 +106,4 @@ $addcategoryresult = mysqli_query($conn, $addcategoryquery);
 
     </div>
 </div>
+<?php include("../../template/backend-footer.php");?> 

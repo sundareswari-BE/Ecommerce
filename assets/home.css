@@ -1,25 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* header section */
-.search-box{
+.search-box {
     background-color: #fff;
     border-radius: 25px;
     border: 1px solid #5E9E4D;
     padding: 0 0 0 .7rem;
 }
-.search-box input{
+
+.search-box input {
     background-color: none;
     outline: none;
     border: none;
-    padding: 0rem  1rem !important;
-    border-radius: none
-    ;
+    padding: 0rem 1rem !important;
+    border-radius: none;
 }
-.search-box button{
+
+.search-box button {
     background-color: none;
     outline: none;
     border: none;
@@ -28,76 +29,150 @@
     background-color: #5E9E4D;
     padding: 10px 20px;
 }
-.search-box button svg{
-    fill:#fff;
+
+.search-box button svg {
+    fill: #fff;
     width: 16px;
-    height:16px;
+    height: 16px;
 }
-.search-box input:focus{
+
+.search-box input:focus {
     outline: unset !important;
     border: unset !important;
 }
-.search-box button:hover{
+
+.search-box button:hover {
     border-radius: unset;
     background-color: none;
 }
 
-.navbar-top{
+.navbar-top {
     border-bottom: 1px solid #5E9E4D !important;
 }
-.navbar-top .container-fluid, .nav-sec .container-fluid{
+
+.navbar-top .container-fluid,
+.nav-sec .container-fluid {
     padding: 0;
 }
-.navbar-top .navbar-brand img{
+
+.navbar-top .navbar-brand img {
     width: 150px;
 }
-.header{
-    background: rgba(248, 158, 158, 0.384) !important;
+
+.header {
+    background: rgba(255, 255, 255, 0.384) !important;
     position: sticky;
     top: 0px;
     z-index: 1;
 }
 
 /* banner section */
-.banner-img{
+.banner-img {
     height: 500px;
     background: url(../assets/home-test/banner.png) no-repeat right center/contain;
 }
 
-.shop-btn{
+.shop-btn {
     background-color: black !important;
     color: #fff !important;
     padding: 1rem 2rem !important;
     border-radius: 30px !important;
 }
-.top-heading,.bottom-heading{
+
+.top-heading,
+.bottom-heading {
     font-size: 3rem;
 }
-.green{
+
+.green {
     color: #3A632F;
     font-size: 6rem;
 }
-.orange{
+
+.orange {
     color: #A85013;
 }
 
-.section-2.products{
+.section-2.products {
     background: linear-gradient(to right, #68A757, #3A632F);
-    border-radius: 100px 0 0 100px;
+    border-radius: 150px 0 0 150px;
 }
-.img-box{
+
+.img-box {
     background-color: #fff;
     border-radius: 10px;
-    padding: 2rem;
-    max-height: 400px;
+    padding: 1rem;
+    width: 300px;
 }
-.img-box .img-cont{
+
+.img-box .img-cont {
     height: 200px;
     width: 100%;
     margin: 0 auto;
-    /* background-color: #5E9E4D; */
-    overflow: hidden;
+    background-color: #fff;
 }
-.img-box .img-cont img{
-    width: 200px;
+
+.img-box .img-cont img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.buy-now-btn {
+    background-color: #000a0a !important;
+    border-radius: 0px !important;
+}
+
+.section-3-img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.green-txt {
+    color: #3A632F;
+    ;
+}
+
+.best-quote {
+    font-size: 3rem;
+}
+
+.section-3.what-best {
+    background: url(../assets/home-test/Background-1.png) no-repeat top center / cover;
+}
+.section-4.quote{
+    background: url(../assets/home-test/plant11\ 1.png) no-repeat center / cover;
+}
+
+/* Define styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Adjust header styles for smaller screens */
+    .navbar-brand img {
+        width: 100px;
+    }
+    .top-heading,
+    .bottom-heading {
+        font-size: 2rem;
+    }
+    .green {
+        font-size: 4rem;
+    }
+    
+}
+
+
+@media (min-width: 1200px) {
+   
+    .navbar-brand img {
+        width: 200px;
+    }
+    .top-heading,
+    .bottom-heading {
+        font-size: 4rem;
+    }
+    .green {
+        font-size: 8rem;
+    }
+   
 }

@@ -7,18 +7,26 @@ if(isset($_GET['delete'])){
     delete_data($conn, $id);
 }
 
-// delete data query
-function delete_data($conn, $id){
-    $query = "DELETE FROM category WHERE categoryid = $id ";
-    $exec = mysqli_query($conn, $query);
 
-    if($exec){
-        $_SESSION['Deleted'] = 'Deleted Successfully';
-        header('location:../pages/category/viewcategory.php');
-        exit();
-    }else{
-        $msg = "Error: " . $query . "<br>" . mysqli_error($conn);
-        echo $msg;
+function delete_data($conn, $id){
+ 
+$query = "DELETE FROM category WHERE categoryid = $id";
+$exec = mysqli_query($conn, $query);
+
+
+if ($exec) {
+   
+    $deleteProductsQuery = "DELETE FROM addproducts WHERE categoryid = $id";
+    $execDeleteProducts = mysqli_query($conn, $deleteProductsQuery);
+
+    if ($execDeleteProducts) {
+        echo "Category and associated products have been deleted successfully.";
+    } else {
+        echo "Failed to delete associated products.";
     }
+} else {
+    echo "Failed to delete category.";
+}
+
 }
 ?>

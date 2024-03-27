@@ -1,7 +1,15 @@
 <?php
 session_start();
 include("../../post/connection.php");
-include("../../template/header.php");
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+ 
+    header("location:..\..\index.php");
+    exit;
+   }
+   
+
+
+include("../../template/backend-header.php");
 
 
 //-------------------------------------------------------- Validation in php ---------------------------------------------------------
@@ -264,4 +272,4 @@ if ($fetchcategoryresult) {
         </div>
     </div>
 </body>
-<!-- <?php include("../template/footer.php"); ?> - -->
+<?php include("../../template/backend-footer.php");?> 

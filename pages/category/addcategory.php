@@ -1,7 +1,21 @@
 <?php
+
 session_start();
 include("../../post/connection.php");
-include("../../template/header.php");
+
+//    ----------------------condition for checking login------------------
+
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+ 
+    header("location:..\..\index.php");
+    exit;
+   }
+
+
+
+include("../../template/backend-header.php");
+
 
 $categorynameErr = "";
 $categoryname = "";
@@ -82,5 +96,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </div>
-
-</body>
+    <?php include("../../template/backend-footer.php");?> 

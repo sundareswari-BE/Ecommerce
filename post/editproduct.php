@@ -1,12 +1,12 @@
 <?php
 session_start();
 include("connection.php");
-include("../template/header.php");
+include("../template/backend-header.php");
 
 //-------------------------------------------------------- Validation in php ---------------------------------------------------------
 
-$productnameErr = $productcodeErr = $productdescriptionErr = $productstatusErr = $imageuploadErr = $productpriceErr = "";
-$productname = $productcode = $productdescription = $productstatus = $productprice = $imageupload = $target_file = "";
+$productnameErr = $productcodeErr = $productdescriptionErr = $productstatusErr = $imageuploadErr = $productpriceErr = $category = "";
+$productname = $productcode = $productdescription = $productstatus = $productprice = $imageupload = $target_file = $categoryErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["productname"])) {
@@ -27,6 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $productstatus = $_POST["productstatus"];
     }
 
+    if (empty($_POST["category"])) {
+        $categoryErr = "Category is required";
+    } else {
+        $category = $_POST["category"];
+    }
 
     if (empty($_POST["productdescription"])) {
         $productdescriptionErr = "Product description is required";
@@ -43,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 if (!isset($_GET['edit'])) {
-    header("location:../invalid_page.php");
-    exit();
+    // header("location:../invalid_page.php");
+    // exit();
 }
 
 $edit = $_GET['edit'];
@@ -53,6 +58,7 @@ $result = mysqli_query($conn, $sql);
 
 if ($result->num_rows > 0) {
     $row = mysqli_fetch_assoc($result);
+    $selectedCategory = $row['categoryid'];
 } else {
     header("location:../invalid_page.php");
     exit();
@@ -64,32 +70,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productdescription = $_POST['productdescription'];
     $productprice = $_POST['productprice'];
     $productstatus = $_POST['productstatus'];
-    // Handle file upload
-    // $productimage = $_FILES['imageupload']['name'];
-    // $temp_image = $_FILES['imageupload']['tmp_name'];
-    // $target = "../path/to/upload/directory/" . basename($productimage);
+   
+
+
+    $productimage = $_FILES['imageupload']['name'];
+    $temp_image = $_FILES['imageupload']['tmp_name'];
+    $target = "../path/to/upload/directory/" . basename($productimage);
 
     if (empty($productnameErr) && empty($productcodeErr) && empty($productdescriptionErr) && empty($productstatusErr) && empty($productpriceErr)) {
 
         $updateaddproduct = "UPDATE addproduct SET productname='$productname', productcode='$productcode', productdescription='$productdescription', productprice='$productprice', productstatus='$productstatus' WHERE productid=$edit";
         $result = mysqli_query($conn, $updateaddproduct);
         if ($result) {
+
             $_SESSION['Updated'] = 'Updated Successfully';
-            header('location:../pages/product/viewproduct.php');
+
+
+            echo '<script>window.location.href = "../pages/product/viewproduct.php";</script>';
+
+
             exit();
         }
 
-        //     if (move_uploaded_file($temp_image, $target) && mysqli_query($conn, $updateaddproduct)) {
-        //         echo '<div class="alert alert-success" role="alert">Updated!</div>';
-        //         header("location:../pages/viewproduct.php");
-        //         exit();
-        //     } else {
-        //         echo '<div class="alert alert-danger" role="alert">Error updating product.</div>';
-        //     }
+             if (move_uploaded_file($temp_image, $target) && mysqli_query($conn, $updateaddproduct)) {
+                echo '<div class="alert alert-success" role="alert">Updated!</div>';
+                header("location:../pages/viewproduct.php");
+                 exit();
+            } else {
+                 echo '<div class="alert alert-danger" role="alert">Error updating product.</div>';
+             }
     }
 }
 
+
+//  for getting categories from category table
+
+
+$categoryname = array();
+$fetchcategory = "SELECT * FROM category ";
+$fetchcategoryresult = mysqli_query($conn, $fetchcategory);
+if ($fetchcategoryresult) {
+    while ($fetchcategoryrow  = mysqli_fetch_assoc($fetchcategoryresult)) {
+        $categoryname[] = $fetchcategoryrow["categoryname"];
+    }
+}
 ?>
+
+
 
 <head>
     <style>
@@ -177,14 +204,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </span>
                     </div>
 
+
                     <div class="form-group">
                         <label for="imageupload">Choose Image:</label>
                         <input type="file" class="form-control-file" id="imageupload" name="imageupload">
                     </div>
+
+
+                    
+
 
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </div>
         </div>
         </form>
     </div>
-</body>
+
+   <?php include("../template/backend-footer.php");?>

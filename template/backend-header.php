@@ -1,3 +1,7 @@
+<?php $admin_url = 'http://localhost/Ecommerce/'; 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <!-- <link rel="stylesheet" href="../assets/home.css"> -->
+    <link rel="stylesheet" href="../assets/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <style>
         * {
@@ -13,7 +17,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .container-fluid.header-wrap{
+
+
+
+        .container-fluid.header-wrap {
             padding: 0;
         }
 
@@ -130,6 +137,11 @@
         .img-box .img-cont img {
             width: 200px;
         }
+
+        .logout a {
+            text-decoration: none;
+            color: #5E9E4D;
+        }
     </style>
 </head>
 
@@ -138,10 +150,10 @@
     <div class="container-fluid header-wrap">
         <header class="header px-5">
             <!-- Navbar -->
+            <!-- <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light navbar-top">
 
-            <nav class="navbar navbar-expand-lg navbar-light navbar-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="../assets/home-test/Logo-1.png" alt="logo image"></a>
+                   
                     <div class="collapse navbar-collapse d-flex justify-content-end">
                         <form class="d-flex">
                             <div class="search-box form-group d-flex">
@@ -152,42 +164,50 @@
                             </div>
                         </form>
                     </div>
-                </div>
-            </nav>
+
+                </nav>
+            </div> -->
 
 
             <nav class="navbar navbar-expand-md nav-sec py-3">
-                <div class="container-fluid">
+                <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                        <a class="navbar-brand" href="#"><img src="<?php echo $admin_url ?>assets/home-test/Logo-1.png" alt="logo image"></a>
                         <ul class="navbar-nav">
-                            <li class="nav-item pe-3">
-                                <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+
+                            <li class="nav-item px-3 dropdown">
+                                <a class="nav-link fw-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Category
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?php echo $admin_url ?>pages/category/addcategory.php">Add category</a>
+                                    <a class="dropdown-item" href="<?php echo $admin_url ?>pages/category/viewcategory.php">View category</a>
+                                   
+                            </li>
+
+                            <li class="nav-item px-3 dropdown">
+                                <a class="nav-link fw-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Product
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?php echo $admin_url ?>pages/product/addproduct.php">Add Product</a>
+                                    <a class="dropdown-item" href="<?php echo $admin_url ?>pages/product/viewproduct.php">View Product</a>
+                                   
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link fw-bold" href="#">Products</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link fw-bold" href="#">Plant Collection</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link fw-bold" href="#">About</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link fw-bold" href="#">Blog</a>
-                            </li>
-                            <li class="nav-item px-3">
-                                <a class="nav-link fw-bold" href="#">Contact</a>
-                            </li>
+                                    <a class="nav-link fw-bold" href="<?php echo $admin_url ?>post/logout.php">Logout</a>
+                                </li>
+                            
                         </ul>
-                        <div class="logout">
+                        <!-- <div class="logout">
                             <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
                                     <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-                                </svg>Logout</button>
-                        </div>
+                                </svg><a href="<?php echo $admin_url ?>post\logout.php">Logout</a></button>
+                        </div> -->
                     </div>
                 </div>
             </nav>

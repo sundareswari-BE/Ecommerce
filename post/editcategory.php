@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("connection.php");
-include("../template/header.php");
+include("../template/backend-header.php");
 
 $categorynameErr = "";
 $categoryname = "";
@@ -97,4 +97,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-</body>
+   <?php include("../template/backend-footer.php");?>

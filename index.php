@@ -1,7 +1,8 @@
 
 <?php
-include("post/connection.php");
 session_start();
+include("post/connection.php");
+
 
 $emailErr = $passwordErr = "";
 $email = $password = "";
@@ -45,9 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["email"] = $row['mail'];
             $_SESSION["name"] = $row['name'];
            
-
-
-            header("Location:\Ecommerce\pages\product\addproduct.php");
+            header("Location:pages/product/viewproduct.php");
             exit();
         } else {
             $_SESSION["loggedin"] = false;
@@ -78,8 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="container">
-        <div class="container  form bg-white pt-4 mt-3 border">
+    <div class="container pt-5">
+        <div class="container  form bg-white pt-4 mt-5 border">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <p class="text-center login-heading hide-me">Login Form</p>
                 <div class="container hide-me">
